@@ -1,0 +1,61 @@
+name: Build complete Latin 1000 PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/**'
+      - 'scripts/**'
+      - '.github/workflows/build-pdf.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render-and-verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install PDF dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install reportlab pymupdf
+          test -f /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+      - name: Generate PDF and prove every entry is present
+        run: |
+          python scripts/build_pdf.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          m = json.loads(Path('output/manifest.json').read_text())
+          assert m['entries'] == 1000
+          assert len(m['templates']) == 23
+          assert sum(t['count'] for t in m['templates']) == 1000
+          assert m['verification']['extractable_latin_entries'] == 1000
+          print('PASS: 1000/1000 PDF entries, 23 templates, no missing rank.')
+          PY
+      - name: Publish PDF and manifest as action artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: latin-1000-complete-pdf
+          path: |
+            output/latin_1000_semantic_templates.pdf
+            output/manifest.json
+          if-no-files-found: error
+      - name: Commit PDF to repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/latin_1000_semantic_templates.pdf output/manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Build verified 1000-entry Latin PDF"
+            git push
+          fi
