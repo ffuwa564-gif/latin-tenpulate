@@ -1,0 +1,166 @@
+{
+  "entries": 1000,
+  "dcc_entries": 997,
+  "extra_words": [
+    {
+      "rank": 998,
+      "lemma": "gemma"
+    },
+    {
+      "rank": 999,
+      "lemma": "vitrum"
+    },
+    {
+      "rank": 1000,
+      "lemma": "puellula"
+    }
+  ],
+  "templates": [
+    {
+      "code": "T01",
+      "name_ja": "参照・指示",
+      "count": 44,
+      "first_pdf_page": 5
+    },
+    {
+      "code": "T02",
+      "name_ja": "接続・論理",
+      "count": 72,
+      "first_pdf_page": 9
+    },
+    {
+      "code": "T03",
+      "name_ja": "方向を示す機能語",
+      "count": 17,
+      "first_pdf_page": 14
+    },
+    {
+      "code": "T04",
+      "name_ja": "場所・空間",
+      "count": 72,
+      "first_pdf_page": 16
+    },
+    {
+      "code": "T05",
+      "name_ja": "移動・方向",
+      "count": 52,
+      "first_pdf_page": 21
+    },
+    {
+      "code": "T06",
+      "name_ja": "取得・授受",
+      "count": 23,
+      "first_pdf_page": 25
+    },
+    {
+      "code": "T07",
+      "name_ja": "生成・変化",
+      "count": 18,
+      "first_pdf_page": 27
+    },
+    {
+      "code": "T08",
+      "name_ja": "命令・働きかけ",
+      "count": 23,
+      "first_pdf_page": 29
+    },
+    {
+      "code": "T09",
+      "name_ja": "知覚・観察",
+      "count": 6,
+      "first_pdf_page": 31
+    },
+    {
+      "code": "T10",
+      "name_ja": "知識・思考",
+      "count": 50,
+      "first_pdf_page": 32
+    },
+    {
+      "code": "T11",
+      "name_ja": "発話・表現",
+      "count": 25,
+      "first_pdf_page": 36
+    },
+    {
+      "code": "T12",
+      "name_ja": "存在・状態",
+      "count": 30,
+      "first_pdf_page": 38
+    },
+    {
+      "code": "T13",
+      "name_ja": "感情・欲求",
+      "count": 45,
+      "first_pdf_page": 41
+    },
+    {
+      "code": "T14",
+      "name_ja": "対立・危険",
+      "count": 46,
+      "first_pdf_page": 45
+    },
+    {
+      "code": "T15",
+      "name_ja": "社会・制度",
+      "count": 126,
+      "first_pdf_page": 49
+    },
+    {
+      "code": "T16",
+      "name_ja": "人物・身体",
+      "count": 48,
+      "first_pdf_page": 58
+    },
+    {
+      "code": "T17",
+      "name_ja": "自然・物質",
+      "count": 62,
+      "first_pdf_page": 62
+    },
+    {
+      "code": "T18",
+      "name_ja": "時間・順序",
+      "count": 53,
+      "first_pdf_page": 67
+    },
+    {
+      "code": "T19",
+      "name_ja": "数量・尺度",
+      "count": 55,
+      "first_pdf_page": 71
+    },
+    {
+      "code": "T20",
+      "name_ja": "性質・評価",
+      "count": 66,
+      "first_pdf_page": 75
+    },
+    {
+      "code": "T21",
+      "name_ja": "程度・様態",
+      "count": 11,
+      "first_pdf_page": 80
+    },
+    {
+      "code": "T22",
+      "name_ja": "一般行為",
+      "count": 40,
+      "first_pdf_page": 81
+    },
+    {
+      "code": "T23",
+      "name_ja": "その他の概念・物",
+      "count": 16,
+      "first_pdf_page": 84
+    }
+  ],
+  "verification": {
+    "pdf_pages": 85,
+    "extractable_latin_entries": 1000,
+    "unique_entry_ids": 1000
+  },
+  "source": "https://dcc.dickinson.edu/latin-core-list1",
+  "gloss_language": "English (original source)",
+  "classification_method": "educational heuristic, not exhaustive semantic analysis"
+}
